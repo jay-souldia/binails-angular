@@ -12,6 +12,7 @@ import { AddReservationComponent } from './home/add-reservation/add-reservation.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { FooterComponent } from './home/footer/footer.component';
+import { ListPrestaComponent } from './home/list-presta/list-presta.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FooterComponent } from './home/footer/footer.component';
     RegisterComponent,
     AddReservationComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ListPrestaComponent
   ],
   imports: [
     BrowserModule,

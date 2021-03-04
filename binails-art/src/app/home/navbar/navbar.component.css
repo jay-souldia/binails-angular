@@ -1,1 +1,10 @@
+.navId {
+  background-color: #21081a;
+  padding: 30px;
+  width: 100%;
+}
 
+.center {
+  margin-top: 50px;
+  text-align: center;
+}
