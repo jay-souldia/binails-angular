@@ -1,0 +1,48 @@
+<div class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" 
+*ngFor='let prestation of prestations' [id]="'view-one-'+prestation.id"  aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">One Prestation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="card mb-3 card-border danger" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="https://picsum.photos/200/300" class="card-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><strong>{{prestation.title | uppercase}}</strong></h5>
+                  <p class="card-text"><strong>Description: </strong>{{prestation.description}} </p>
+                  <p class="card-text"><strong>Prix: </strong>{{prestation.price}} </p>
+                  <p class="card-text"><strong>Durée: </strong> {{prestation.duration}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+            <!-- <div class="col-sm-3" >
+                <div class="card border-danger" style="width: 18rem;">
+                      <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{prestation.title}}</h5>
+                      <p class="card-text">{{prestation.description}} </p>
+                    </div>
+                    <div class="card-body">
+                        <a routerLink="/add-reservation" class="card-link btn btn-primary">Reserver</a>
+                        <a href="#" class="card-link  btn btn-primary">Detail</a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Rservez</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- *ngFor='let prestation of prestations' id="'view_one'+ prestation.id" -->
+

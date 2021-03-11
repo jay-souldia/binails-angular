@@ -1,71 +1,27 @@
-<div class="container-fluid">
+<!-- <h2>{{prestations | json}}</h2> -->
+<h2 style="text-align:center;">Laisser vous guider ... Nous prendrons soins de vous !</h2>
+<hr>
+<hr>
+<div class="container-fluid marge1">
 <div class="row ">
-        <div class="col-sm-3">
-            <div class="card" style="width: 18rem;">
-                <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+        <div class="col-sm-3" *ngFor='let prestation of prestations'>
+            <div class="card border-danger" style="width: 18rem;">
+                <img src="https://picsum.photos/200/150" class="card-img-top" alt="...">
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">{{prestation.title | uppercase}}</h5>
+                <p class="card-text">{{prestation.description}}</p>
                 </div>
-                <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                </ul>
                 <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+                   
+                    <a class="card-link  btn btn-primary centered" data-toggle="modal" [attr.data-target]="'#view-reservation-'+prestation.id">Reservez</a>
+                    <a class="card-link  btn btn-primary button2" data-toggle="modal" [attr.data-target]="'#view-one-'+prestation.id">Detail</a>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-3 ">
-            <div class="card" style="width: 18rem;">
-                <img src="https://picsum.photos/200" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                </ul>
-                <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3 ">
-            <div class="card" style="width: 18rem;">
-                <img src="https://picsum.photos/200" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                </ul>
-                <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3 ">
-            <div class="card" style="width: 18rem;">
-                <img src="https://picsum.photos/200" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                </ul>
-                <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-        </div>
         </div>
 </div>
+
+<app-view-one-presta [prestations]="prestations"></app-view-one-presta>
+<app-add-reservation [prestations]="prestations"></app-add-reservation>
 
 
   

@@ -1,1 +1,60 @@
-<p>login works!</p>
+<h2 class="center">Connectez vous !</h2>
+<hr><hr>
+<div class="container formule">
+  <div class="row">
+    <form class="col-md-8">
+      <div class="row">
+        <div class="input-field col s6">
+          <!-- <input id="email" type="email" class="validate" required [(ngModel)]="user.email" name="email" #name='ngModel'> -->
+          <input placeholder="username" id="username" type="text" class="validate" required>
+          <label for="username" data-error="wrong" data-success="right">username</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="password" type="password" class="validate" required>
+          <label for="password">Password</label>
+        </div>
+      </div>
+
+      <div class="buton">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Se connecter
+          <i class="material-icons right">send</i>
+        </button>
+        <button class="btn waves-effect waves-light" type="submit" name="action" routerLink="/register">Vous n'etes pas inscrit ?
+          <i class="material-icons right">Connectez-vous</i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<!-- <div class="container">
+    <div class="row">
+      <form class="col-md-8" *ngIf="user" name="form" #f="ngForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="input-field col s6">
+            <!-- <input id="email" type="email" class="validate" required [(ngModel)]="user.email" name="email" #name='ngModel'> -->
+            <!-- <input placeholder="username" id="username" type="text" class="validate" required [(ngModel)]="user.username" name="username" #name='ngModel'>
+            <label for="username" data-error="wrong" data-success="right">username</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="password" type="password" class="validate" required [(ngModel)]="user.password" name="password" #name='ngModel'>
+            <label for="password">Password</label>
+          </div>
+        </div>
+  
+        <div class="buton">
+          <button [disabled]="f.form.invalid" class="btn waves-effect waves-light" type="submit" name="action">Se connecter
+            <i class="material-icons right">send</i>
+          </button>
+          <button class="btn waves-effect waves-light" type="submit" name="action" routerLink="/register">Vous n'etes pas inscrit ?
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div> -->

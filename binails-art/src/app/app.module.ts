@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { ListPrestaComponent } from './home/list-presta/list-presta.component';
+import { HomeComponent } from './admin/home/home.component';
+import { ViewOnePrestaComponent } from './home/view-one-presta/view-one-presta.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,12 +29,17 @@ import { ListPrestaComponent } from './home/list-presta/list-presta.component';
     AddReservationComponent,
     NavbarComponent,
     FooterComponent,
-    ListPrestaComponent
+    ListPrestaComponent,
+    HomeComponent,
+    ViewOnePrestaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

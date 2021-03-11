@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Prestation } from 'src/app/models/prestation';
 
 @Component({
   selector: 'app-edit-prestation',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditPrestationComponent implements OnInit {
 
+  @Input() prestations: Prestation[] = [];
   constructor() { }
 
   ngOnInit(): void {

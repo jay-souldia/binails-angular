@@ -1,0 +1,137 @@
+<div class="marge">
+    <h1 classe="center">Administration du site </h1>
+   <span><a routerLink="/add-prestation">Ajouter une prestation</a></span>
+   <!-- <button type="button" class="btn btn-primary" data-toggle="modal" [attr.data-target]="'#form-presta' + prestation.id">
+   ajouter 
+  </button> -->
+  </div>
+  <div class="container">
+    <table class="centered striped">
+      <thead style="background-color:pink;">
+      <tr>
+        <th>Titre</th>
+        <th>Description</th>
+        <th>Prix</th>
+        <th>Duree</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+  
+      <tbody>
+      <tbody *ngFor='let prestation of prestations'>
+      <tr>
+        <td>
+          <img src="../../../assets/images/NailsAc2.jpg" style="height:100px; width:180px"/>
+        <p><strong>{{prestation.title | uppercase}}</strong></p>
+        </td>
+        <td>{{prestation.description}}</td>
+        <td>{{prestation.price}}</td>
+        <td>{{prestation.duration}}</td>
+        <td>
+          <!-- <button type="button" class="btn btn-primary" (click)="selectPrestation(prestation)" data-toggle="modal" [attr.data-target]="'#update-form' + prestation.id">
+            Modifier 
+           </button> -->
+          <!-- <a class="waves-effect waves-light btn" (click)="selectPrestation(prestation)">Modifier</a> -->
+          <a class="waves-effect waves-light btn"(click)="delete(prestation)">Supprimer</a>
+        </td>
+      </tr>
+  
+  
+            <!-- <tr>
+              <td>
+                <img src="https://picsum.photos/100/180"/>
+                Pose de vernis classique
+              </td>
+              <td>Description</td>
+              <td>50 euros</td>
+              <td>1h</td>
+              <td>
+                <a class="btn btn-primary">Modifier</a>
+                <a class="btn btn-primary">Supprimer</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                 <img src="https://picsum.photos/100/180"/>
+                Pose de vernis classic
+              </td>
+              <td>Description</td>
+              <td>50 euros</td>
+              <td>1h</td>
+              <td>
+                <a class="btn btn-primary">Modifier</a>
+                <a class="btn btn-primary">Supprimer</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="https://picsum.photos/100/180"/>
+                Pose de vernis classic
+              </td>
+              <td>Description</td>
+              <td>50 euros</td>
+              <td>1h</td>
+              <td>
+                <a class="btn btn-primary">Modifier</a>
+                <a class="btn btn-primary">Supprimer</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="https://picsum.photos/100/180"/>
+                Pose de vernis classic
+              </td>
+              <td>Description</td>
+              <td>50 euros</td>
+              <td>1h</td>
+              <td>
+                <a class="btn btn-primary">Modifier</a>
+                <a class="btn btn-primary">Supprimer</a>
+              </td>
+            </tr> <tr>
+              <td>
+                <img src="https://picsum.photos/100/180"/>
+                Pose de vernis classic
+              </td>
+              <td>Description</td>
+              <td>50 euros</td>
+              <td>1h</td>
+              <td>
+                <a class="btn btn-primary">Modifier</a>
+                <a class="btn btn-primary">Supprimer</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="https://picsum.photos/100/180"/>
+                Pose de vernis classic
+              </td>
+              <td>Description</td>
+              <td>50 euros</td>
+              <td>1h</td>
+              <td>
+                <a class="btn btn-primary">Modifier</a>
+                <a class="btn btn-primary">Supprimer</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="https://picsum.photos/100/180"/>
+                Pose de vernis classic
+              </td>
+              <td>Description</td>
+              <td>50 euros</td>
+              <td>1h</td>
+              <td>
+                <a class="btn btn-primary">Modifier</a>
+                <a class="btn btn-primary">Supprimer</a>
+              </td>
+            </tr> -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- //<app-add-prestation [prestation]="prestations"></app-add-prestation> -->
+  <!-- //<app-edit-prestation [prestation]="prestations"></app-edit-prestation> -->
+
+

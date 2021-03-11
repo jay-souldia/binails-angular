@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Prestation } from 'src/app/models/prestation';
 
 @Component({
   selector: 'app-add-reservation',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-reservation.component.css']
 })
 export class AddReservationComponent implements OnInit {
+
+  @Input() prestations: Prestation[] = [];
+  public selectedPrestation?: Prestation;
+
 
   constructor() { }
 

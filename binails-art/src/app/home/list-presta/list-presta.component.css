@@ -2,3 +2,20 @@
   display: flex;
   justify-content: space-around;
 }
+
+.marge {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.marge1 {
+  margin-left: 30px;
+}
+
+.centered {
+  margin-right: 60px;
+}
+
+.button2 {
+  margin-right: 5px;
+}
