@@ -9,9 +9,12 @@ import { Prestation } from 'src/app/models/prestation';
 export class EditPrestationComponent implements OnInit {
 
   @Input() prestations: Prestation[] = [];
+  public imgUrl: any;
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  onSelectFile() { }
 
 }

@@ -1,12 +1,12 @@
 <div class="marge">
-    <h1 classe="center">Administration du site </h1>
-   <span><a routerLink="/add-prestation">Ajouter une prestation</a></span>
+    <h1 class="centre">Administration du site </h1>
+   <span><a routerLink="/add-prestation" class="btn btn-primary taille">Ajouter une prestation</a></span>
    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" [attr.data-target]="'#form-presta' + prestation.id">
    ajouter 
   </button> -->
   </div>
   <div class="container">
-    <table class="centered striped">
+    <table class="table table-striped table-bordered">
       <thead style="background-color:pink;">
       <tr>
         <th>Titre</th>
@@ -21,18 +21,28 @@
       <tbody *ngFor='let prestation of prestations'>
       <tr>
         <td>
-          <img src="../../../assets/images/NailsAc2.jpg" style="height:100px; width:180px"/>
-        <p><strong>{{prestation.title | uppercase}}</strong></p>
+          <div >
+            <p class="hello"><strong>{{prestation.title | uppercase}}</strong></p>
+            <img src="https://picsum.photos/200"/>
+          </div>
+         
+         
+        
         </td>
-        <td>{{prestation.description}}</td>
-        <td>{{prestation.price}}</td>
-        <td>{{prestation.duration}}</td>
+        
+          <td>{{prestation.description}}</td>
+          <td>{{prestation.price}}euros</td>
+          <td>{{prestation.duration}}heures</td>
+
         <td>
           <!-- <button type="button" class="btn btn-primary" (click)="selectPrestation(prestation)" data-toggle="modal" [attr.data-target]="'#update-form' + prestation.id">
             Modifier 
            </button> -->
           <!-- <a class="waves-effect waves-light btn" (click)="selectPrestation(prestation)">Modifier</a> -->
-          <a class="waves-effect waves-light btn"(click)="delete(prestation)">Supprimer</a>
+          <div class="bouton">
+            <a class="card-link  btn btn-primary button2" data-toggle="modal" [attr.data-target]="'#update-form'+prestation.id">Modifier</a>
+          <a class="btn btn-danger"(click)="delete(prestation)">Supprimer</a>
+        </div>
         </td>
       </tr>
   
@@ -132,6 +142,6 @@
   </div>
 
   <!-- //<app-add-prestation [prestation]="prestations"></app-add-prestation> -->
-  <!-- //<app-edit-prestation [prestation]="prestations"></app-edit-prestation> -->
+  <app-edit-prestation [prestations]="prestations"></app-edit-prestation>
 
 

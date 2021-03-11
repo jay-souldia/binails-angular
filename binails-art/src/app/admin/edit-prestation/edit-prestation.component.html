@@ -1,17 +1,54 @@
-<div class="modal fade" *ngFor="let prestation of prestations" [id]="'update-form' + prestation.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" *ngFor="let prestation of prestations" [id]="'update-form'+prestation.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Mettre à jour</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <form>
         <div class="modal-body">
-          ...
+          <div class="form-group col-lg">
+            <label class="control-label" for="title">Titre prestation:</label>
+            <div>
+                <input type="text" class="form-control" id="title" name="title" class="validate" required [(ngModel)]="prestation.title" #title='ngModel'>
+                <!-- <span [hidden]="title.valid">Champs obligatoire</span> -->
+            </div>
+        </div>
+        <div class="form-group col-md-4 mb-3">
+            <label class="control-label" for="photo">image</label>
+            <div>
+                <input type="file" class="form-control-file" id="photo" (change)="onSelectFile()" name="photo" [(ngModel)]="prestation.photo">
+                <img [src] = "imgUrl" height="200" width="200" *ngIf="imgUrl">
+            </div>
+        </div>
+        <div class="row col-md-4 mb-3">
+            <div class="form-group col">
+                <label class="control-label" for="duration">Duree:</label>
+                <div>
+                    <input type="number"  name="duration" class="validate" required [(ngModel)]="prestation.duration" >
+                </div>
+            </div>
+            <div class="form-group col">
+                <label class="control-label" for="price"></label>
+                <div>
+                    <input type="number" class="form-control input-lg" placeholder="Prix" name="price" id="price" class="validate" required [(ngModel)]="prestation.price" #price='ngModel'>
+                </div>
+            </div>
+        </div>
+            <div class="form-group col-md-4 mb-3">
+                <label class="control-label" for="description">Description de la prestation:</label>
+                <div>
+                    <!-- <input type="text" class="form-control input-lg" name="description" id="description" class="validate" required [(ngModel)]="prestation.description" #description='ngModel'> -->
+                    <textarea class="form-control rounded-0" name="description" placeholder="Description ..." id="description" class="validate" required [(ngModel)]="prestation.description" #description='ngModel' rows="3"></textarea>
+                </div>
+            </div>
+          
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Save changes</button>
         </div>
+      </form>
       </div>
     </div>
   </div>
