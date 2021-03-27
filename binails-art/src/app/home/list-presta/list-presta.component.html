@@ -2,19 +2,19 @@
 <h2 style="text-align:center;">Laisser vous guider ... Nous prendrons soins de vous !</h2>
 <hr>
 <hr>
-<div class="container-fluid marge1">
-<div class="row ">
-        <div class="col-sm-3" *ngFor='let prestation of prestations'>
-            <div class="card border-danger" style="width: 18rem;">
+<div class="container">
+<div class="row " >
+        <div class="col-sm-4 taille1" *ngFor='let prestation of prestations' >
+            <div class="card taille " appBorderPresta >
                 <img src="https://picsum.photos/200/150" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">{{prestation.title | uppercase}}</h5>
-                <p class="card-text">{{prestation.description}}</p>
+                <div class="card-body coule">
+                <h5 class="card-title"><strong>{{prestation.title}}</strong></h5>
+                <hr>
+               <p class="card-text">{{prestation.description}}</p>    
                 </div>
-                <div class="card-body">
-                   
-                    <a class="card-link  btn btn-primary centered" data-toggle="modal" [attr.data-target]="'#view-reservation-'+prestation.id">Reservez</a>
-                    <a class="card-link  btn btn-primary button2" data-toggle="modal" [attr.data-target]="'#view-one-'+prestation.id">Detail</a>
+                <div class="card-footer buton">
+                    <a class="card-link  btn btn-danger centered" data-toggle="modal" [attr.data-target]="'#view-reservation-'+prestation.id">Reservez</a>
+                    <a class="card-link  btn btn-danger button2" data-toggle="modal" [attr.data-target]="'#view-one-'+prestation.id">Detail</a>
                 </div>
             </div>
         </div>

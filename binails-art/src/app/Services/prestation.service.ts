@@ -10,9 +10,9 @@ import { FormGroup, FormBuilder, FormControl, ReactiveFormsModule, Validators } 
   providedIn: 'root'
 })
 export class PrestationService {
-  private readonly GET_PRESTAS = environment.apiUrl + '/prestations';
-  private readonly SAVE_PRESTA = environment.apiUrl + '/prestations/add';
-  private readonly SAVE_PRESTA2 = environment.apiUrl + '/prestations/prestaimages';
+  private readonly GET_PRESTAS = environment.apiUrl + '/api';
+  private readonly SAVE_PRESTA = environment.apiUrl + '/api/add';
+  private readonly SAVE_PRESTA2 = environment.apiUrl + '/api/images';
   listPresta: Prestation[] = [];
   public dataForm: FormGroup = new FormGroup({
     title: new FormControl(),
@@ -52,6 +52,7 @@ export class PrestationService {
     );
   }
 
+
   savePrestation(prestation: Prestation): Observable<Prestation> {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-type ': 'application/json' })
@@ -61,6 +62,7 @@ export class PrestationService {
       catchError(this.handleError<any>('addPresta'))
     );
   }
+
 
   getOnePresta(id: number): Observable<Prestation> {
     return this.http.get<Prestation>(`${this.GET_PRESTAS}/${id}`);
@@ -91,9 +93,24 @@ export class PrestationService {
 
 
 
+
+
+
+
+
+
+
+
+
   // new methode 
 
   createData(prestation: Prestation): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type ': 'application/json',
+        'Acces-Control-Allow-Origin': '*'
+      })
+    }
     return this.http.post(`${this.SAVE_PRESTA2}`, prestation);
 
   }

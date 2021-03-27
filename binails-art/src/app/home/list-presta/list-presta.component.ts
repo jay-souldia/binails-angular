@@ -16,7 +16,7 @@ export class ListPrestaComponent implements OnInit {
   constructor(private prestaService: PrestationService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.onGetPrestations();
+    this.getData();
   }
 
   onGetPrestations(): void {

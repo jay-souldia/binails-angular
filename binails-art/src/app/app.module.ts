@@ -1,3 +1,4 @@
+import { BorderPrestaDirective } from './Directives/border-presta.directive';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,10 +19,12 @@ import { HomeComponent } from './admin/home/home.component';
 import { ViewOnePrestaComponent } from './home/view-one-presta/view-one-presta.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     AddPrestationComponent,
+    BorderPrestaDirective,
     DeletePrestationComponent,
     EditPrestationComponent,
     LoginComponent,

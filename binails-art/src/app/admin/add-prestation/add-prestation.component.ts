@@ -48,12 +48,13 @@ export class AddPrestationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public onFileChanged(event: any) {
-    this.selectedFile = event.target.files[0];
+  public onFileChanged(e: any) {
+    this.selectedFile = e.target.files[0];
     let reader = new FileReader();
-    reader.readAsDataURL(event.target.files[0]);
-    reader.onload = (event2) => {
-      this.imgUrl = reader.result
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload = (event: any) => {
+      //this.imgUrl = reader.result
+      this.imgUrl = event.target.result; // nouvelle façon a verifier sinon revenir sur la methode au dessus
     };
   }
 
@@ -102,6 +103,10 @@ export class AddPrestationComponent implements OnInit {
 
 
 
+
+
+
+
   onSubmit() {
     this.addData();
   }
@@ -131,7 +136,7 @@ export class AddPrestationComponent implements OnInit {
     const formData = new FormData();
     //const title = this.service.prestation.title;
     const prestation = {
-      id: this.service.prestation.id, title: this.service.prestation.title,
+      id: this.prestation.id, title: this.prestation.title,
       durattion: this.service.prestation.duration,
       description: this.service.prestation.description, photo: this.service.prestation.photo,
       price: this.service.prestation.price
@@ -139,6 +144,7 @@ export class AddPrestationComponent implements OnInit {
     formData.append('prestation', JSON.stringify(prestation));
     formData.append('file', this.userFile);
     this.service.createData(prestation).subscribe(data => {
+      this.prestation = data;
       this.goBack();
     })
   }

@@ -13,9 +13,51 @@
 }
 
 .centered {
-  margin-right: 60px;
+  margin-left: 10px;
+  border-radius: 15px;
+  border: #ee2d74 2px solid;
+  background-color: #461137;
+  width: 90px;
 }
 
 .button2 {
-  margin-right: 5px;
+  margin-left: 120px;
+  border-radius: 15px;
+  border: #ee2d74 2px solid;
+  width: 90px;
+  background-color: #461137;
+}
+
+.taille {
+  margin-bottom: 30px;
+
+
+}
+
+.taille1 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.bouton {
+  display: flex;
+  position: absolute;
+  justify-content: space-around;
+  background-color: #faf9fa;
+}
+
+h5 {
+  font-size: 18px;
+  text-align: center;
+  color: #E2467F;
+}
+
+p {
+  color: #461137;
+  text-align: center;
+}
+
+.coule {
+  background-color: #F7E8F2;
 }
